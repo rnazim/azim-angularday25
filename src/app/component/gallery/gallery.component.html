@@ -1,0 +1,17 @@
+<div class="content-slide2">
+    <div class="container">
+            <div class="description-content-slide2">
+                <div class="container-slide2">
+                    <div class="sub-title">
+                        <h3>Gallery</h3>
+                    </div>
+                    <div class="image-container">
+                        <img *ngFor="let image of images"
+                        [src]="image"
+                        [alt]="image"/>
+                        <button (click)="addImage()" class="btn-header">Add Images</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

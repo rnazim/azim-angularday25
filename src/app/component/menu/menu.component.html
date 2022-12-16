@@ -1,0 +1,104 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="co-md-4" style="width: 33%">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h2>Menu POS</h2>
+                    </div>
+                    
+                    <div class="form-group mb-2">
+                        <label>Makanan / Minuman</label>
+                        <input [(ngModel)]="menu.name" type="text" class="form-control"/>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Harga</label>
+                        <input [(ngModel)]="menu.price" type="number" class="form-control"/>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>Qty</label>
+                        <input [(ngModel)]="menu.qty" type="number" class="form-control"/>
+                    </div>
+                    <button (click)="addMenu()" class="btn btn-primary">Tambah</button>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">         
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                            <h2>Menu</h2>
+                        <table *ngIf="menus.length > 0; else emptyMenu" class="table table-bordered">
+
+                            <thead>
+                                <tr>
+                                    <th>Makanan / Minuman</th>
+                                    <th>Harga</th>
+                                    <th>Qty</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-template ngFor let-item [ngForOf]="menus" let-i="index">
+                                    <tr>
+                                        <td>{{ item.name }}</td>
+                                        <td>{{ item.price }}</td>
+                                        <td>{{ item.qty }}</td>
+                                        <td> {{ (item.price * item.qty) | currency: "IDR" }}</td>
+                                        <td><button (click)="deleteMenu(i)" class="btn btn-danger">Delete</button></td>
+                                    </tr>
+                                </ng-template>
+            
+                                <tr *ngIf="menus">
+                                    <th colspan="1">PPN</th>
+                                    <th colspan="4">{{ 11 / 100 | percent }}</th>
+                                </tr>
+            
+                                <tr *ngIf="menus">
+                                    <th colspan="1">Total</th>
+                                    <th colspan="4">{{ harga | currency: "IDR" }}</th>
+                                </tr>
+            
+                                <tr *ngIf="menus">
+                                    <th colspan="1">Grand Total</th>
+                                    <th colspan="4">{{ (harga * (11/100)) + harga | currency: "IDR" }}</th>
+                                </tr>
+                            </tbody>
+                        </table> 
+                        <ng-template #emptyMenu>
+                            <div class="alert alert-warning" role="alert" style="width: 100%;" >
+                                Menu masih kosong, tambahkan yuk !
+                            </div>
+                        </ng-template>
+                        </div>
+                </div>
+                <div class="co-md-4 mt-3">
+                    <div class="card ">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h2>Pembayaran</h2>
+                            </div>
+                            <div class="form-group">
+                                <input [(ngModel)]="bayar" (keypress)="enter($event)" type="number" class="form-control"/>
+                            </div>
+                            <button (click)="hitung()" class="btn btn-primary mt-2">Bayar</button>
+                            <!-- <label class="form-label">Kembalian</label> -->
+                            <div *ngIf="statusPembayaran" class="alert alert-primary mt-2" role="alert">
+                                {{ hasil | currency:"IDR " }}
+                            </div>
+                            <div *ngIf="!statusPembayaran" class="alert alert-primary mt-2" role="alert">
+                                Pembayaran kurang !
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,16 @@
+
+.content {
+    margin-top: 170px;
+    align-items:center;
+}
+
+.description {
+    color: white;
+    font-size: 17px;
+}
+
+.option {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 40px;
+}

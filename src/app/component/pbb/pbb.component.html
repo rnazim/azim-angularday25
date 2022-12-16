@@ -1,0 +1,26 @@
+<div class="content-slide3">
+    <div class="container">
+            <div class="description-content-slide3">
+                <div class="container-calculator">
+                    <div class="sub-title">
+                        <h3>Calculator PBB</h3>
+                    </div>
+                    <label>Luas Tanah</label>
+                    <input type="number" class="form-control" placeholder="Enter Luas Tanah" [(ngModel)]="luasTanah">
+                    <label>Luas Bangunan</label>
+                    <input type="number" class="form-control" placeholder="Enter Luas Bangunan" [(ngModel)]="luasBangunan">
+                    <label>NJOP Tanah</label>
+                    <input type="number" class="form-control" placeholder="Enter NJOP Tanah" [(ngModel)]="njopTanah">
+                    <label>NJOP Bangunan</label>
+                    <input type="number" class="form-control" placeholder="Enter NJOP Bangunan" [(ngModel)]="njopBangunan">
+<!-- 
+                    <div *ngIf="result > 0" class="alert alert-primary" role="alert">
+                        {{ result }}
+                    </div> -->
+                    <button (click)="hitungPBB()" class="btn btn-success mt-2">Hitung</button>
+                    <label style="color: chartreuse;" class="mt-2">  = {{ result }}</label>
+
+                </div>
+        </div>
+    </div>
+</div>

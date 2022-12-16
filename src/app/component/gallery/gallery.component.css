@@ -1,0 +1,19 @@
+.content-slide2 {
+    background-image: url(https://i.pinimg.com/736x/e9/fc/7f/e9fc7f81e58e05fcce8cbba8d2caa9f7.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.description-content-slide2{
+    font-size:17px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+}
+
+.container-slide2 {
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    padding: 16px;
+}
