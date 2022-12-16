@@ -90,7 +90,7 @@
                             <div *ngIf="statusPembayaran" class="alert alert-primary mt-2" role="alert">
                                 {{ hasil | currency:"IDR " }}
                             </div>
-                            <div *ngIf="!statusPembayaran" class="alert alert-primary mt-2" role="alert">
+                            <div *ngIf="!statusPembayaran" class="alert alert-danger mt-2" role="alert">
                                 Pembayaran kurang !
                             </div>
                         </div>

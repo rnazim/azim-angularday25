@@ -26,8 +26,7 @@ export class MenuComponent implements OnInit{
 
   private calculate(): void {
     for (let i in this.menus) {
-      this.harga += this.price +
-      (this.menus[i].price * this.menus[i].qty);
+      this.harga += this.price + (this.menus[i].price * this.menus[i].qty);
     }
   }
 
@@ -43,6 +42,8 @@ export class MenuComponent implements OnInit{
   }
 
   deleteMenu(index: number){
+    
+    this.harga -= (this.menus[index].price * this.menus[index].qty);
     this.menus.splice(index, 1);
   }
 
