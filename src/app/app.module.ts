@@ -13,16 +13,21 @@ import { PbbComponent } from './component/pbb/pbb.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TodoComponent } from './component/todo/todo.component';
 import { MenuComponent } from './component/menu/menu.component';
+import { CounterComponent } from './components/counter/counter.component';
+import { AntrianComponent } from './components/antrian/antrian.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent, ServerComponent, UserComponent, HeaderComponent, BannerComponent, GalleryComponent, PbbComponent, TodoComponent, MenuComponent
+    AppComponent, ServerComponent, UserComponent, HeaderComponent, BannerComponent, GalleryComponent, PbbComponent, TodoComponent, MenuComponent, CounterComponent, AntrianComponent, CalculatorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

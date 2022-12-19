@@ -22,7 +22,8 @@
       
 </body>
 </html> -->
-<app-menu></app-menu>
+
+<!-- <app-menu></app-menu> -->
 <!-- <div class="container">
   <div class="row">
     <div class="col-md-3 mt-4"  *ngFor="let post of posts">
@@ -36,3 +37,38 @@
       </div>
     </div>
 </div> -->
+
+<!-- <div class="app">
+  <h2>{{ initialCount }}</h2>
+  <button (click)="counting()">Klik Me</button>
+  <app-counter [count]="initialCount"></app-counter>
+</div> -->
+
+<!-- <h1>App Component</h1>
+<app-antrian
+  [antrian]="antrian"
+  (onAntrianBerubah)="onAntrianBerubah($event)"></app-antrian> -->
+
+  <!-- <h1>Calculator</h1>
+<app-calculator #calculator 
+  [total]="0"
+  (onJumlah)="onJumlah($event)"></app-calculator>
+
+  <p>Total: {{ totalX }}</p>
+  <p>{{ calculator.merkCalculator }}</p>
+  <button (click)="calculator.getNumberEasy()">Click me !</button> -->
+
+<div class="container">
+  <h1>Halo </h1>
+</div>
+
+<ul>
+  <li *ngFor="let post of postings">
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.body }}</p>
+</li>
+</ul>
+
+<!-- <pre>
+  {{ postings |json }}
+</pre> -->
